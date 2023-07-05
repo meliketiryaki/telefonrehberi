@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Anasayfa</title>
-    </head>
-    <body>
-        <h1>Kişiler</h1>
-    </body>
-</html>
+<h1>Kişilerin Listesi</h1>
+<ul>
+  {% for kisi in kisiler %}
+    <li>
+        <a href="{% url 'kisilerdetay' kisi.slug %}">
+            {{ kisi.adsoyad }}
+        </a>
+        <br>
+        <a href="tel:{{ kisi.tel }}">Telefonla Ara</a>
+        <a href="{% url 'kisiduzenle' kisi.slug %}">Düzenle</a>
+    </li>
+  {% empty %}
+    <li>Hiç kişi bulunamadı.</li>
+  {% endfor %}
+</ul>
+

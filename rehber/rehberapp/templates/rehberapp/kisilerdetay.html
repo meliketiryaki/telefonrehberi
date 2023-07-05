@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Anasayfa</title>
-    </head>
-    <body>
-        <h1>Kişi Bilgileri: {{id}}</h1>
-    </body>
-</html>
+<!DOCTYPE html>
+<h1>Kişinin Detayları</h1>
+<ul>
+  <li>Ad Soyad: {{ k.adsoyad }}</li>
+  <li>Telefon: {{ k.tel }}</li>
+  <li>E-posta: {{ k.email }}</li>
+  <li>Şirket:<a href="{% url 'sirketlerdetay' k.sirket.slug %}">{{ k.sirket }}</a></li>
+</ul>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gelen Aramalar</title>
+</head>
+<body>
+    <h1>Gelen Aramalar</h1>
+    <ul>
+        {% for arama in aramalar %}
+            <li>
+                <strong>Ad Soyad:</strong> {{ arama.adsoyad }}<br>
+                <strong>Telefon:</strong> {{ arama.tel }}<br>
+                <strong>Açıklama:</strong> {{ arama.aciklama }}<br>
+                <strong>Arama Nedeni:</strong> {{ arama.arama_nedeni }}<br>
+            </li>
+        {% empty %}
+            <li>Hiç gelen arama bulunamadı.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kişiyi Düzenle</title>
+</head>
+<body>
+    <h1>Kişiyi Düzenle</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Kaydet">
+    </form>
+    <form method="post" action="{% url 'kisisil' kisi.slug %}">
+        {% csrf_token %}
+        <input type="submit" value="Kişiyi Sil">
+    </form>
+</body>
+</html>

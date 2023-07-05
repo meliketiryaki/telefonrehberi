@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Şirket Düzenle</title>
+</head>
+<body>
+    <h1>Şirket Düzenle</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Kaydet">
+    </form>
+    <form method="post" action="{% url 'sirketsil' sirket.id %}">
+        {% csrf_token %}
+        <input type="submit" value="Şirket Sil">
+    </form>
+</body>
+</html>

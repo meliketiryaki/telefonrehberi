@@ -2,7 +2,16 @@
 
 {%block content%}
     
+<h1>Anasayfa</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" name="telefon_rehberi" value="Telefon Rehberi">
+</form>
     
-        <h1>Homepage</h1>
-    
+<form method="post" action="{% url 'gelenaramalar' %}">
+  {% csrf_token %}
+  <button type="submit">Gelen Aramalar</button>
+</form>
+
 {% endblock %}
